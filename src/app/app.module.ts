@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
 
 //Rutas
 import { APP_ROUTING } from './app.routes';
@@ -31,7 +32,8 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     APP_ROUTING
   ],
   providers: [
-    HeroesService
+    HeroesService,
+    {provide: APP_BASE_HREF, useValue : '/' }
   ],
   bootstrap: [AppComponent]
 })
